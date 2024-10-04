@@ -11,6 +11,10 @@ public class SelectEnemyDrone : Action
 	public SharedTransform target;
 	public SharedFloat minRadius;
 	public SharedFloat maxRadius;
+	/* Vector3 m_Position;
+	public Vector3 Position
+	{ get { return m_Position; } set { m_Position = value; }
+	}*/
 
 	public override void OnAwake()
 	{

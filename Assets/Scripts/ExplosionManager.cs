@@ -22,18 +22,19 @@ public class ExplosionManager : MonoBehaviour
 
     public void SpawnExplosionOnObject(Vector3 pos,Vector3 dir, GameObject go,ExplosionSize size = ExplosionSize.medium)
 	{
-        Vector3 rayOrigin = pos - dir * 2;
-        RaycastHit[] hits = Physics.RaycastAll(rayOrigin, dir);
-        for (int i = 0; i < hits.Length; i++)
+        Collider col = go.GetComponentInChildren<Collider>();
+        if (col)
         {
-            RaycastHit hit = hits[i];
-            if (hit.collider.gameObject == go)
+            Vector3 rayOrigin = pos - dir * 2;
+            Ray ray = new Ray(rayOrigin, dir);
+
+            RaycastHit hit;
+            if (col.Raycast(ray, out hit, float.PositiveInfinity))
             {
                 pos = hit.point;
-                break;
             }
         }
-      
+
         GameObject newExplosionGO = Instantiate(m_ExplosionPrefabs[(int)size], pos- m_ExplosionOffsetDistance*dir, Quaternion.identity);
         Destroy(newExplosionGO, m_ExplosionLifeDuration);
 	}

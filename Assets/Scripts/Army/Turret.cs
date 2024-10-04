@@ -68,11 +68,6 @@ public class Turret : ArmyElement
 		if (onRotationOver != null) onRotationOver();
 	}
 
-	public void Die()
-	{
-		ArmyManager.ArmyElementHasBeenKilled(gameObject);
-		Destroy(gameObject);
-	}
 }
 
 

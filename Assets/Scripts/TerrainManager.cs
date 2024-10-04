@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TerrainManager : MonoBehaviour
 {
+    //Singleton
     static TerrainManager m_Instance;
     public static TerrainManager Instance { get { return m_Instance; } }
 
