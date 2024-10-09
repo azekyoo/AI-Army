@@ -35,8 +35,8 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
 
             if (HasArrived()) return TaskStatus.Success;
 
-            if((Time.frameCount % nObjects) ==index)
-                SetDestination(target.Value.position);
+          //  if((Time.frameCount % nObjects) ==index)
+            //    SetDestination(target.Value.position);
 
             return TaskStatus.Running;
         }

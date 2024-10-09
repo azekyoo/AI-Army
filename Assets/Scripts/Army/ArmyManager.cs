@@ -38,6 +38,29 @@ public abstract class ArmyManager : MonoBehaviour
 
         return enemies.FirstOrDefault()?.gameObject;
     }
+    public GameObject GetFurthestEnemy<T>(Vector3 centerPos, float minRadius, float maxRadius) where T : ArmyElement {
+        var enemies = GetAllEnemiesOfType<T>(true).Where(
+            item => Vector3.Distance(centerPos, item.transform.position) > minRadius
+                    && Vector3.Distance(centerPos, item.transform.position) < maxRadius);
+
+        var furthestEnemy = enemies.OrderByDescending(item => Vector3.Distance(centerPos, item.transform.position))
+                                   .FirstOrDefault();
+
+        return furthestEnemy?.gameObject;
+    }
+    public GameObject GetClosestEnemy<T>(Vector3 centerPos, float minRadius, float maxRadius) where T : ArmyElement {
+        var enemies = GetAllEnemiesOfType<T>(true).Where(
+            item => Vector3.Distance(centerPos, item.transform.position) > minRadius
+                    && Vector3.Distance(centerPos, item.transform.position) < maxRadius);
+
+        var closestEnemy = enemies.OrderBy(item => Vector3.Distance(centerPos, item.transform.position))
+                                  .FirstOrDefault();
+
+        return closestEnemy?.gameObject;
+    }
+
+
+
 
     protected void ComputeStatistics(ref int nDrones,ref int nTurrets,ref int cumulatedHealth)
 	{
