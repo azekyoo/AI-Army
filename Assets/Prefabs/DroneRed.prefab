@@ -664,7 +664,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7376284243541408677
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -681,7 +681,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &7376284243532172243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,7 +1335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Health: {fileID: 7376284244275232427}
-  m_MissilePrefab: {fileID: 5353017525593995713, guid: f7834b433baf96a4ca9f18b1620a01a4, type: 3}
+  m_MissilePrefab: {fileID: 5353017525593995713, guid: 6e3b0e3020066be439c08b8ead202d5d, type: 3}
   m_MissileSpawnPos:
   - {fileID: 7376284243647085243}
   - {fileID: 7376284244114932892}
