@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,7 +23,7 @@ public class ArmyManagerRed : ArmyManager
         ComputeStatistics(ref nDrones, ref nTurrets, ref health);
 		GUIUtility.systemCopyBuffer = "1\t" + ((int)Timer.Value).ToString() + "\t"+nDrones.ToString()+"\t"+nTurrets.ToString()+"\t"+health.ToString();
 		
-		RefreshHudDisplay(); //pour une dernière mise à jour en cas de victoire
+		RefreshHudDisplay(); //pour une derniï¿½re mise ï¿½ jour en cas de victoire
 	}
 
 }

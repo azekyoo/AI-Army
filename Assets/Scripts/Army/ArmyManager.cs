@@ -23,14 +23,17 @@ public abstract class ArmyManager : MonoBehaviour
 
     [SerializeField] UnityEvent m_OnArmyIsDead;
 
+
+    public List<ArmyElement> squad1 { get; set; }
+    public List<ArmyElement> squad2 { get; set; }
     /* ORIGINAL FUNCTION
-    protected List<T> GetAllEnemiesOfType<T>(bool sortRandom) where T : ArmyElement
-    {
-        var enemies = GameObject.FindObjectsOfType<T>().Where(element => !element.gameObject.CompareTag(m_ArmyTag)).ToList();
-        if (sortRandom) enemies.Sort((a, b) => Random.value.CompareTo(.5f));
-        return enemies;
-    }
-    */
+protected List<T> GetAllEnemiesOfType<T>(bool sortRandom) where T : ArmyElement
+{
+    var enemies = GameObject.FindObjectsOfType<T>().Where(element => !element.gameObject.CompareTag(m_ArmyTag)).ToList();
+    if (sortRandom) enemies.Sort((a, b) => Random.value.CompareTo(.5f));
+    return enemies;
+}
+*/
     protected List<T> GetAllEnemiesOfType<T>(bool sortRandom) where T : ArmyElement
 {
     var enemies = GameObject.FindObjectsOfType<T>()
@@ -52,6 +55,24 @@ public abstract class ArmyManager : MonoBehaviour
     return enemies;
 }
 
+
+    public int GetNumberEnnemies<T>() where T : ArmyElement
+    {
+       return  GetAllEnemiesOfType<T>(true).Count;
+
+    }
+    
+    public List<GameObject> GetAllAlliesOfType<T>() where T : ArmyElement
+    {
+        var allies = GameObject.FindObjectsOfType<T>()
+            .Where(element => element.gameObject.CompareTag(m_ArmyTag))
+            .Select(element => element.gameObject)
+            .ToList();
+
+        allies.Sort((a, b) => Random.value.CompareTo(.5f));
+    
+        return allies;
+    }
 
     public GameObject GetRandomEnemy<T>(Vector3 centerPos, float minRadius, float maxRadius) where T : ArmyElement
     {
@@ -81,6 +102,30 @@ public abstract class ArmyManager : MonoBehaviour
 
         return closestEnemy?.gameObject;
     }
+    
+    #region Allies Retrieval
+    public List<ArmyElement> GetAllAllies(bool sortRandom)
+    {
+        var allies = GameObject.FindObjectsOfType<ArmyElement>().Where(element => element.gameObject.CompareTag(m_ArmyTag)).ToList();
+        if (sortRandom) allies.Sort((a, b) => Random.value.CompareTo(.5f));
+        return allies;
+    }
+
+    public GameObject GetRandomAlly(ArmyElement allyBuyer)
+    {
+        var allies = GetAllAllies(true);
+        return allies.FirstOrDefault()?.gameObject;
+    }
+
+    public GameObject GetRandomWeakAlly(ArmyElement allyBuyer)
+    {
+        var weakAllies = GetAllAllies(true).Where(item => {
+            Health health = item.GetComponentInChildren<Health>();
+            return health && health.Value < 100;
+        });
+        return weakAllies.FirstOrDefault()?.gameObject;
+    }
+    #endregion
 
 
 

@@ -8,9 +8,11 @@ public abstract class ArmyElement : MonoBehaviour, IArmyElement
 	[SerializeField] Health m_Health;
 	public float Health { get => m_Health.Value; }
 
+	public string ordre { get; set; }
 	public void Die()
 	{
 		ArmyManager.ArmyElementHasBeenKilled(gameObject);
 		Destroy(gameObject);
 	}
+	
 }
