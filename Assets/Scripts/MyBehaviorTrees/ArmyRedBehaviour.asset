@@ -20,8 +20,9 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(290.879364,212.24263)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(11.9029522,139.565475)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(-137.007874,144.48819)"},"ID":2,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":2},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"CreatSquad","NodeData":{"Offset":"(78.3794556,145.8366)"},"ID":3,"Name":"Creat
-        Squad","Instant":true,"List`1allies":[],"List`1squad1":[],"List`1squad2":[]}]}}'
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(290.879364,212.24263)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(11.9029522,139.565475)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"CreatSquad","NodeData":{"Offset":"(-170.0716,188.007172)"},"ID":2,"Name":"Creat
+        Squad","Instant":true},{"Type":"ArmyGiveOrder","NodeData":{"Offset":"(31.9590855,184.141418)"},"ID":3,"Name":"Army
+        Give Order","Instant":true,"List`1squad1":[],"List`1squad2":[]}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
