@@ -8,7 +8,7 @@ using UnityEngine.AI;
 using UnityEngine.Events;
 
 /*
-Préparer un terrain où toutes les terrasses sont accessibles
+Prï¿½parer un terrain oï¿½ toutes les terrasses sont accessibles
 */
 
 public abstract class ArmyManager : MonoBehaviour
@@ -23,12 +23,35 @@ public abstract class ArmyManager : MonoBehaviour
 
     [SerializeField] UnityEvent m_OnArmyIsDead;
 
+    /* ORIGINAL FUNCTION
     protected List<T> GetAllEnemiesOfType<T>(bool sortRandom) where T : ArmyElement
     {
         var enemies = GameObject.FindObjectsOfType<T>().Where(element => !element.gameObject.CompareTag(m_ArmyTag)).ToList();
         if (sortRandom) enemies.Sort((a, b) => Random.value.CompareTo(.5f));
         return enemies;
     }
+    */
+    protected List<T> GetAllEnemiesOfType<T>(bool sortRandom) where T : ArmyElement
+{
+    var enemies = GameObject.FindObjectsOfType<T>()
+        .Where(element => !element.gameObject.CompareTag(m_ArmyTag))
+        .ToList();
+
+    if (sortRandom)
+    {
+        // Create a list of enemies with random values assigned to each one
+        var randomEnemies = enemies.Select(e => new { Enemy = e, RandomValue = Random.value }).ToList();
+
+        // Sort the enemies based on the random value
+        randomEnemies.Sort((a, b) => a.RandomValue.CompareTo(b.RandomValue));
+
+        // Extract the sorted enemies back into a list
+        enemies = randomEnemies.Select(r => r.Enemy).ToList();
+    }
+
+    return enemies;
+}
+
 
     public GameObject GetRandomEnemy<T>(Vector3 centerPos, float minRadius, float maxRadius) where T : ArmyElement
     {
@@ -72,7 +95,7 @@ public abstract class ArmyManager : MonoBehaviour
     // Start is called before the first frame update
     public virtual IEnumerator Start()
     {
-        yield return null; // on attend une frame que tous les objets aient été instanciés ...
+        yield return null; // on attend une frame que tous les objets aient ï¿½tï¿½ instanciï¿½s ...
 
         GameObject[] allArmiesElements = GameObject.FindGameObjectsWithTag(m_ArmyTag);
         foreach (var item in allArmiesElements)
