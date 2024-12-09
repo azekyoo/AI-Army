@@ -2363,7 +2363,7 @@ GameObject:
   - component: {fileID: 4063552230360950}
   - component: {fileID: 95805638432926132}
   m_Layer: 0
-  m_Name: PolyArtWizardMaskTintMat
+  m_Name: PolyArtWizardMaskTintMatRED
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
