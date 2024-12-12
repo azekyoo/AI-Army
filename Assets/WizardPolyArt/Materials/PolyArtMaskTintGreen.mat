@@ -21,11 +21,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _PolyArtAlbedo:
-        m_Texture: {fileID: 2800000, guid: 4960428282afaef44ab798134d3c2db0, type: 3}
+        m_Texture: {fileID: 2800000, guid: c3e1d31cf8ef742ad8aed75a1fdaff49, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _PolyArtMask:
-        m_Texture: {fileID: 2800000, guid: c47c9719298650c47a7f2042127ff9d8, type: 3}
+        m_Texture: {fileID: 2800000, guid: c9658c52dbf374bf6aeeb26310f71145, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _polyArtTex:
@@ -40,12 +40,12 @@ Material:
     m_Floats:
     - _Float1: 0
     - _Metal: 0
-    - _Metallic: 0.3
+    - _Metallic: 0
     - _Sm: 0
-    - _Smoothness: 0
+    - _Smoothness: 0.659
     - __dirty: 0
     m_Colors:
-    - _Hair: {r: 0, g: 1, b: 0.48989296, a: 0}
-    - _InnerCloth: {r: 0.3301887, g: 0.0056631537, b: 0, a: 0}
-    - _OuterChlothes: {r: 0.1519475, g: 1, b: 0, a: 0}
+    - _Hair: {r: 1, g: 0.4915225, b: 0, a: 0}
+    - _InnerCloth: {r: 1, g: 0.959795, b: 0, a: 0}
+    - _OuterChlothes: {r: 1, g: 0.94509804, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _PolyArtAlbedo:
-        m_Texture: {fileID: 2800000, guid: 4960428282afaef44ab798134d3c2db0, type: 3}
+        m_Texture: {fileID: 2800000, guid: ce026dfecbc694085a1d87a22f3bb49d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _PolyArtMask:
@@ -40,9 +40,9 @@ Material:
     m_Floats:
     - _Float1: 0
     - _Metal: 0
-    - _Metallic: 0.3
+    - _Metallic: 0
     - _Sm: 0
-    - _Smoothness: 0
+    - _Smoothness: 0.517
     - __dirty: 0
     m_Colors:
     - _Hair: {r: 0, g: 0.7997432, b: 1, a: 0}
