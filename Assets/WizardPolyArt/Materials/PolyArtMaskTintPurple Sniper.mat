@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PolyArtMaskTintPurple
+  m_Name: PolyArtMaskTintPurple Sniper
   m_Shader: {fileID: 4800000, guid: b3b027031f09c4b4c83228ddb863368b, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -47,5 +47,5 @@ Material:
     m_Colors:
     - _Hair: {r: 0, g: 0.7997432, b: 1, a: 0}
     - _InnerCloth: {r: 0.9711925, g: 0.9496855, b: 1, a: 0}
-    - _OuterChlothes: {r: 0.49206352, g: 0, b: 1, a: 0}
+    - _OuterChlothes: {r: 0.14798377, g: 0, b: 0.3018868, a: 0}
   m_BuildTextureStacks: []

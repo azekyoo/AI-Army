@@ -79,10 +79,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62679390fbc487846a3e750ec2553c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LifeDuration: 3
-  m_Acceleration: 40
-  m_TranslationMaxSpeed: 20
-  m_DamagePoints: 5
+  m_LifeDuration: 0.4
+  m_Acceleration: 400
+  m_TranslationMaxSpeed: 200
+  m_DamagePoints: 20
 --- !u!54 &6889418124726983432
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -185,7 +185,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.07060622, b: 0, a: 1}
+      key0: {r: 0.52435493, g: 0, b: 1, a: 1}
       key1: {r: 1, g: 0.6931067, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -218,6 +218,6 @@ TrailRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0.2
   m_Autodestruct: 0
   m_Emitting: 1
