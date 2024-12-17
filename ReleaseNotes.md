@@ -27,9 +27,9 @@ Gameplay:
 # Répartition de la production
 Elouan s'est occupé d'améliorer l'IA des drones via leur arbre de comportement, et de créer 2 équipes supplémentaires.
 
-Fabien s'est occupé de créer le rôle sniper qui est un drone tirant à très longue distance.
+Fabien s'est occupé de créer le rôle sniper qui est un drone tirant à très longue distance, et de rajouter du décor naturel au champ de bataille.
 
-Victor s'est occupé de transformer les drones en magiciens lanceurs d'obres magiques et d'améliorer les graphismes.
+Victor s'est occupé de transformer les drones en magiciens lanceurs d'orbes magiques et d'améliorer les graphismes.
 
 Thomas s'est occupé d'ajouter le gameplay des châteaux faisant apparaître des drones supplémentaires.
 
