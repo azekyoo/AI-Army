@@ -1,41 +1,44 @@
+# Projet Total War :boom:
 
-# Membres du groupe
+## Membres du groupe 🤵
 
 - Elouan Barois
 - Fabien Devillechabrolle
 - Victor Gaspard
 - Thomas Ploix
 
-# Réflexion stratégique et tactique
-Nous voulions un combat vraiment épique digne d'un film d'action. L'idée d'une bataille sur 4 fronts nous paraissait chaotique et passionante. Nous voulions également que les drones soient assez intelligents garder la meme clible, ne pas faire de déplacements inutiles, et au bout d'un certain temps se concentrer ensemble sur une cible.
+## Réflexion stratégique et tactique 🤔
+Nous voulions un combat vraiment épique digne d'un film d'action. L'idée d'une **bataille sur 4 fronts** nous paraissait chaotique et passionante.<br/>Nous voulions également que les drones soient assez intelligents pour être capables de garder la meme clible, ne pas faire de déplacements inutiles, et au bout d'un certain temps se concentrer ensemble sur une même cible.
 
-# Développement
-## Arbres de comportement
-- Il y a eu plusieures itérations des arbres de comportement, notamment une où les 4 équipes avaient un arbre personalisé
+## Développement
+### Arbres de comportement 🌳
+- Il y a eu plusieurs itérations des arbres de comportement, notamment une où les 4 équipes avaient un arbre personnalisé
 - Finalement nous avons opté pour un arbre général pour favoriser la surprise du gagnant
 - Celui-ci est assez fidèle à l'arbre d'origine cependant il y a eu des ajouts:
+  
   ![image](https://github.com/user-attachments/assets/9659413e-4f37-4cc6-a193-b2a22650de6c)
-  - Ajout d'un répéteur/séquenceur afin de rester sur la meme cible
-  - modification de certaines taches
+- Ajout d'un répéteur/séquenceur afin de rester sur la meme cible
+- Modification de certaines taches
 
-## Fonctionnalités ajoutées
-- Fonctions de sélection d'ennemi:
+### Fonctionnalités ajoutées 💡
+
+
+- Fonctions de sélection d'ennemis:
     - GetFurthestEnemy
     - GetClosestEnemy
+
 - Refonte de la fonction seek:
-    - Recalcul de la trajectoire en cours
+    - **Recalcul** de la trajectoire en cours
     - On évite que les drones se croisent en allant chacun vers leur cible
     - On réduit les mouvements inutiles
     
+- Gameplay: 
+  - Création de **2 équipes supplémentaires** pour un combat encore plus **épique**
+  - Nouvelle classe : **Drone sniper** (unique aux violets) tirant à longue distance, avec un tir unique plus puissant
+  - Lorsque une équipe a fait suffisamment de kills, ce qui **génère des golds**, et permet d'appeler des **renforts** qui apparaissent au château
+  - On a retiré les tourelles par soucis de lisibilité
 
-
-Gameplay: 
-- Création de 2 équipes supplémentaires pour un combat encore plus équipe
-- Drone sniper tirant à très longue distance
-- Châteaux faisant apparaître des drones supplémentaires lorsque l'équipe a fait suffisamment de kills ( Finalement pas complètement implémentés)
-- On a retiré les tourelles par soucis de lisibilité
-
-## Scripts C#
+### Scripts C#
 
 Sélection d'ennemis:
 ```C#
@@ -108,14 +111,14 @@ public override TaskStatus OnUpdate()
 }
 ```
 
-# Remarques
+## Remarques
 
-# Répartition de la production
-Elouan s'est occupé d'améliorer l'IA des drones via leur arbre de comportement, et de créer 2 équipes supplémentaires.
+  ### Répartition de la production
+**Elouan** s'est occupé d'améliorer l'**IA des drones** via leur arbre de comportement, et de créer 2 équipes supplémentaires.
 
-Fabien s'est occupé de créer le rôle sniper qui est un drone tirant à très longue distance, et de rajouter du décor naturel au champ de bataille.
+**Fabien** s'est occupé de créer le **rôle sniper** qui est un drone tirant à longue distance avec un seul projectile puissant, et de rajouter du décor naturel au champ de bataille.
 
-Victor s'est occupé de transformer les drones en magiciens lanceurs d'orbes magiques et d'améliorer les graphismes.
+**Victor** s'est occupé de transformer les drones en **magiciens** lanceurs d'orbes magiques et d'améliorer les graphismes.
 
-Thomas s'est occupé d'ajouter le gameplay des châteaux faisant apparaître des drones supplémentaires.
+**Thomas** s'est occupé d'ajouter le **gameplay des châteaux** faisant apparaître des drones supplémentaires.
 
