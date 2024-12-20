@@ -13,6 +13,8 @@ public class Castle : MonoBehaviour
     private int currentCoins = 150; // Montant initial de pièces
 
     [SerializeField] TMP_Text m_CoinsText;
+    
+    public ArmyManager armyManager;
 
     void Start()
     {
@@ -45,7 +47,10 @@ public class Castle : MonoBehaviour
         if (spawnPoint && unitPrefab)
         {
             // Spawn l'unité au point de spawn
-            Instantiate(unitPrefab, spawnPoint.position, spawnPoint.rotation);
+            var newUnit =Instantiate(unitPrefab, spawnPoint.position, spawnPoint.rotation);
+            newUnit.SetActive(true);
+            newUnit.GetComponent<ArmyElement>().ArmyManager=armyManager;
+            armyManager.AddArmyElement(newUnit.GetComponent<ArmyElement>());
         }
     }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6110978, g: 0.5546134, b: 0.6513033, a: 1}
+  m_IndirectSpecularColor: {r: 0.61109775, g: 0.5546134, b: 0.6513027, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7781,7 +7781,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.333, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -152, y: 52}
+  m_AnchoredPosition: {x: -152, y: 1}
   m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &820281746
@@ -14191,7 +14191,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543823823}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16763,7 +16763,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.333, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -152, y: -49.6}
+  m_AnchoredPosition: {x: -152, y: 4}
   m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1838382306
@@ -21013,6 +21013,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1092779262994642119, guid: ca0787e197321b24f84a4555a4397d97, type: 3}
+      propertyPath: armyManager
+      value: 
+      objectReference: {fileID: 1790153833}
+    - target: {fileID: 1092779262994642119, guid: ca0787e197321b24f84a4555a4397d97, type: 3}
       propertyPath: m_CoinsText
       value: 
       objectReference: {fileID: 155256315}
@@ -21192,6 +21196,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5658864082869262526, guid: c36ee895052b84a4fbddae53f295cc5c, type: 3}
+      propertyPath: armyManager
+      value: 
+      objectReference: {fileID: 1956340614}
+    - target: {fileID: 5658864082869262526, guid: c36ee895052b84a4fbddae53f295cc5c, type: 3}
       propertyPath: m_CoinsText
       value: 
       objectReference: {fileID: 1136871880}
@@ -21322,6 +21330,10 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6807712761043433204, guid: fcd0ed0ee61540b4bb1462df34102873, type: 3}
+      propertyPath: armyManager
+      value: 
+      objectReference: {fileID: 274342504}
+    - target: {fileID: 6807712761043433204, guid: fcd0ed0ee61540b4bb1462df34102873, type: 3}
       propertyPath: m_CoinsText
       value: 
       objectReference: {fileID: 570508602}
@@ -21430,6 +21442,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7027275974475392897, guid: a3d1e89056913fd4cabd9e36651cc3f5, type: 3}
+      propertyPath: armyManager
+      value: 
+      objectReference: {fileID: 1543823825}
     - target: {fileID: 7027275974475392897, guid: a3d1e89056913fd4cabd9e36651cc3f5, type: 3}
       propertyPath: m_CoinsText
       value: 

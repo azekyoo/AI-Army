@@ -172,7 +172,12 @@ protected List<T> GetAllEnemiesOfType<T>(bool sortRandom) where T : ArmyElement
 
         if (m_ArmyElements.Count == 0 & m_OnArmyIsDead!=null) m_OnArmyIsDead.Invoke();
     }
-    
+
+    public void AddArmyElement(ArmyElement getComponent)
+    {
+        m_ArmyElements.Add(getComponent);
+        RefreshHudDisplay();
+    }
 }
 
 
