@@ -37,6 +37,7 @@ public class MySeekWithRecalculation : NavMeshMovement
         }
         else{
             Debug.LogWarning("Task started but target is null!");
+            
         }
     }
 
