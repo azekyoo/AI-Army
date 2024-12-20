@@ -19,11 +19,14 @@ public class Drone : ArmyElement,IShoot
 
 	public void Shoot()
 	{
+		//adjust spawn height so i doesn't spawn in the ground
+		Vector3 spawnOffset = Vector3.up * 0.5f;
 		//Debug.Break();
 		for (int i = 0; i < m_MissileSpawnPos.Length; i++)
 		{
 			Transform missileSpawnPos = m_MissileSpawnPos[i];
-			GameObject newMissileGO = Instantiate(m_MissilePrefab, missileSpawnPos.position, Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, Vector3.up).normalized));
+			Vector3 adjustedPosition = missileSpawnPos.position + spawnOffset; // Add the height offset
+			GameObject newMissileGO = Instantiate(m_MissilePrefab, adjustedPosition, Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, Vector3.up).normalized));
 			newMissileGO.tag = gameObject.tag;
 			Missile missile = newMissileGO.GetComponent<Missile>();
 			missile.SetStartSpeed(m_NavMeshAgent.speed);

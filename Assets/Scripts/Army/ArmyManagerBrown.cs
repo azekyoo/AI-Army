@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
-using UnityEngine.AI;
+using UnityEngine.AI;	
 public class ArmyManagerBrown : ArmyManager
 {
     public override void ArmyElementHasBeenKilled(GameObject go)

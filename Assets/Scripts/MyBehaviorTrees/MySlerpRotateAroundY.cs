@@ -10,8 +10,13 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         public SharedTransform target;
         [Tooltip("The Rotation slerping coef")]
         public SharedFloat slerpCoef;
+
         [Tooltip("The Arrival Angle magnitude")]
         public SharedFloat arrivalAngle;
+
+        [Tooltip("The maximum distance allowed for rotation")]
+        public SharedFloat maxRotationDistance = 15.0f;  // Added max distance for rotation
+
 
         Quaternion qEndOrient;
         public override void OnStart()
@@ -23,6 +28,16 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         public override TaskStatus OnUpdate()
         {
             if (!target.Value) return TaskStatus.Failure;
+
+            // Calculate the distance to the target
+            float distanceToTarget = Vector3.Distance(transform.position, target.Value.position);
+
+            if (distanceToTarget > maxRotationDistance.Value)
+            {
+                // If the target is out of range, don't rotate and do nothing
+                Debug.Log("Target out of range for rotation.");
+                return TaskStatus.Success;  // No action, just return success
+            }
 
             Vector3 dir = Vector3.ProjectOnPlane(target.Value.position - transform.position, Vector3.up).normalized;
             qEndOrient = Quaternion.LookRotation(dir);
