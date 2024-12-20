@@ -25,10 +25,11 @@ public class CreatSquad : Action
         }
         allies = _armyManager.GetAllAllies(false);
          var nbrAllies = allies.Count;
+         int moitier = nbrAllies / 2;
         if (nbrAllies > 0)
         {
-            _armyManager.squad1 = allies.GetRange(0, nbrAllies / 2);
-            _armyManager.squad2 = allies.GetRange(nbrAllies / 2, nbrAllies/2 +1);
+            _armyManager.squad1 = allies.GetRange(0, moitier);
+            _armyManager.squad2 = allies.GetRange(moitier, moitier);
             Debug.Log("Squad 1: " + _armyManager.squad1.Count + " Squad 2: " + _armyManager.squad2.Count);
             return TaskStatus.Success;
         }
