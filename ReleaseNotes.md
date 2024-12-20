@@ -26,6 +26,10 @@ Nous voulions un combat vraiment épique digne d'un film d'action. L'idée d'une
 - Fonctions de sélection d'ennemis:
     - GetFurthestEnemy
     - GetClosestEnemy
+  
+- Création de squad dirigiés par l'armyManager qui donne des ordres à ses drones 
+    - **Attaquer** : les drones se dirigent vers l'ennemi le plus loin
+    - **Défendre** : les drones se dirigent vers l'ennemi le plus proche
 
 - Refonte de la fonction seek:
     - **Recalcul** de la trajectoire en cours
@@ -35,7 +39,9 @@ Nous voulions un combat vraiment épique digne d'un film d'action. L'idée d'une
 - Gameplay: 
   - Création de **2 équipes supplémentaires** pour un combat encore plus **épique**
   - Nouvelle classe : **Drone sniper** (unique aux violets) tirant à longue distance, avec un tir unique plus puissant
-  - Lorsque une équipe a fait suffisamment de kills, ce qui **génère des golds**, et permet d'appeler des **renforts** qui apparaissent au château
+  - Gestion de gold mannuel qui  permet d'appeler des **renforts** qui apparaissent au château de l'équipe, 100 golds pour faire apparaitre un drone
+(l'objectif était de faire donner des golds pour des drones tués)
+
   - On a retiré les tourelles par soucis de lisibilité
 
 ### Scripts C#
@@ -111,6 +117,43 @@ public override TaskStatus OnUpdate()
 }
 ```
 
+Création de squad:
+```C#
+public class CreatSquad : Action
+{
+    ArmyManager _armyManager;
+    private List<ArmyElement> allies;
+
+    
+    public override void OnAwake()
+    {
+        _armyManager =(ArmyManager) GetComponent(typeof(ArmyManager));
+    }
+
+    public override TaskStatus OnUpdate()
+    {
+        if (_armyManager == null) {
+            Debug.Log("ArmyManager is null");
+            return TaskStatus.Running; // reference to the ArmyManager has not been injected yet
+        }
+        allies = _armyManager.GetAllAllies(false);
+         var nbrAllies = allies.Count;
+         int moitier = nbrAllies / 2;
+        if (nbrAllies > 0)
+        {
+            _armyManager.squad1 = allies.GetRange(0, moitier);
+            _armyManager.squad2 = allies.GetRange(moitier, moitier);
+            Debug.Log("Squad 1: " + _armyManager.squad1.Count + " Squad 2: " + _armyManager.squad2.Count);
+            return TaskStatus.Success;
+        }
+        else
+        {
+            return TaskStatus.Failure;
+        }
+    }
+}
+```
+
 ## Remarques
 
   ### Répartition de la production
@@ -120,5 +163,31 @@ public override TaskStatus OnUpdate()
 
 **Victor** s'est occupé de transformer les drones en **magiciens** lanceurs d'orbes magiques et d'améliorer les graphismes.
 
-**Thomas** s'est occupé d'ajouter le **gameplay des châteaux** faisant apparaître des drones supplémentaires.
+**Thomas** s'est occupé d'ajouter le **gameplay des châteaux et de golds** faisant apparaître des drones supplémentaires et a rajouter le comportement des escouades de drones et l'ordre donner depuis l'armyManager.
 
+
+## Statistique
+
+A retrouver dans le fichier `Statistique.csv`
+
+    Timer	DroneRouge	DroneVertJaune	DroneViolet	DroneMarronBleu	Vainqueur
+    45	0	0	9	0	Violet
+    60	5	0	0	0	Rouge
+    55	0	1	0	0	Vert
+    39	0	0	10	0	Violet
+    53	0	5	0	0	Vert
+    43	0	0	1	0	Violet
+    48	0	0	6	0	Violet
+    43	0	5	0	0	Vert
+    50	0	5	0	0	Vert
+    51	0	0	4	0	Violet
+    49	0	0	4	0	Violet
+    40	0	4	0	0	Vert
+    50	0	0	7	0	Violet
+    50	3	0	0	0	Rouge
+    55	0	0	4	0	Violet
+    47	0	0	5	0	Violet
+    58	0	3	0	0	Vert
+    50	0	4	0	0	Vert
+    50	0	0	0	5	Bleu
+    43	0	0	9	0	Violet
