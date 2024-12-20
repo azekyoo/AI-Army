@@ -13,8 +13,10 @@ Nous voulions un combat vraiment épique digne d'un film d'action. L'idée d'une
 ## Arbres de comportement
 - Il y a eu plusieures itérations des arbres de comportement, notamment une où les 4 équipes avaient un arbre personalisé
 - Finalement nous avons opté pour un arbre général pour favoriser la surprise du gagnant
-- Celui-ci est assez fidèle à l'arbre d'origine cependant il y a eu des ajouts.
-- - ![image](https://github.com/user-attachments/assets/9659413e-4f37-4cc6-a193-b2a22650de6c)
+- Celui-ci est assez fidèle à l'arbre d'origine cependant il y a eu des ajouts:
+  ![image](https://github.com/user-attachments/assets/9659413e-4f37-4cc6-a193-b2a22650de6c)
+  - Ajout d'un répéteur/séquenceur afin de rester sur la meme cible
+  - modification de certaines taches
 
 ## Fonctionnalités ajoutées
 - Fonctions de sélection d'ennemi:
@@ -35,6 +37,53 @@ Gameplay:
 
 ## Scripts C#
 
+Seek:
+```C#
+public override TaskStatus OnUpdate()
+    {
+        //Tache non réussie si la cible n'existe pas ou meurt en cours
+        if (target.Value == null)
+            return TaskStatus.Failure;
+
+        // Tache réussie si on est proche de la cible finale.
+        if (HasArrived())
+            return TaskStatus.Success;
+
+        // Recalculer la cible intermédiaire si on est proche de la cible finale.
+        if (Vector3.Distance(transform.position, lastDestination) < arriveDistance.Value)
+        {
+            UpdateIntermediateDestination();
+        }
+
+        return TaskStatus.Running;
+    }
+
+    private void UpdateIntermediateDestination()
+    {
+        if (target.Value == null) return;
+
+        Vector3 currentPosition = transform.position;
+        Vector3 targetPosition = target.Value.position;
+        Vector3 directionToTarget = (targetPosition - currentPosition).normalized;
+
+        //Calculer la cible intermédiaire sur le chemin de la cible finales
+        Vector3 intermediatePosition = currentPosition + directionToTarget * fractionOfDistance.Value * Vector3.Distance(currentPosition, targetPosition);
+
+        lastDestination = intermediatePosition;
+        SetDestination(lastDestination);
+            Debug.Log($"Intermediate Position: {intermediatePosition}, Target: {target.Value.name}");
+
+    }
+
+    public override void OnReset()
+    {
+        base.OnReset();
+        target = null;
+        fractionOfDistance = 0.5f;
+    }
+}
+
+```
 # Remarques
 
 # Répartition de la production
