@@ -37,7 +37,31 @@ Gameplay:
 
 ## Scripts C#
 
-Seek:
+Sélection d'ennemis:
+```C#
+public GameObject GetFurthestEnemy<T>(Vector3 centerPos, float minRadius, float maxRadius) where T : ArmyElement {
+        var enemies = GetAllEnemiesOfType<T>(true).Where(
+            item => Vector3.Distance(centerPos, item.transform.position) > minRadius
+                    && Vector3.Distance(centerPos, item.transform.position) < maxRadius);
+
+        var furthestEnemy = enemies.OrderByDescending(item => Vector3.Distance(centerPos, item.transform.position))
+                                   .FirstOrDefault();
+
+        return furthestEnemy?.gameObject;
+    }
+    public GameObject GetClosestEnemy<T>(Vector3 centerPos, float minRadius, float maxRadius) where T : ArmyElement {
+        var enemies = GetAllEnemiesOfType<T>(true).Where(
+            item => Vector3.Distance(centerPos, item.transform.position) > minRadius
+                    && Vector3.Distance(centerPos, item.transform.position) < maxRadius);
+
+        var closestEnemy = enemies.OrderBy(item => Vector3.Distance(centerPos, item.transform.position))
+                                  .FirstOrDefault();
+
+        return closestEnemy?.gameObject;
+    }
+```
+
+Navigation vers l'ennemi:
 ```C#
 public override TaskStatus OnUpdate()
     {
@@ -82,8 +106,8 @@ public override TaskStatus OnUpdate()
         fractionOfDistance = 0.5f;
     }
 }
-
 ```
+
 # Remarques
 
 # Répartition de la production
