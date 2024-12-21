@@ -168,7 +168,7 @@ public class CreatSquad : Action
 
 ## Statistique
 
-A retrouver dans le fichier `Statistique.csv`
+A retrouver dans le fichier [Statistique.csv](/Statistique.csv)
 
     Timer	DroneRouge	DroneVertJaune	DroneViolet	DroneMarronBleu	Vainqueur
     45	0	0	9	0	Violet
