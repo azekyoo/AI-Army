@@ -27,13 +27,13 @@ Nous voulions un combat vraiment épique digne d'un film d'action. L'idée d'une
     - GetFurthestEnemy
     - GetClosestEnemy
   
-- Création de squad dirigiés par l'armyManager qui donne des ordres à ses drones 
+- Création de squads dirigées par l'armyManager qui donne des ordres à ses drones 
     - **Attaquer** : les drones se dirigent vers l'ennemi le plus loin
     - **Défendre** : les drones se dirigent vers l'ennemi le plus proche
 
 - Refonte de la fonction seek:
     - **Recalcul** de la trajectoire en cours
-    - On évite que les drones se croisent en allant chacun vers leur cible
+    - On évite que les drones ne se croisent en allant chacun vers leur cible
     - On réduit les mouvements inutiles
     
 - Gameplay: 
@@ -42,7 +42,7 @@ Nous voulions un combat vraiment épique digne d'un film d'action. L'idée d'une
   - Gestion de gold manuelle qui  permet d'appeler des **renforts** qui apparaissent au château de l'équipe, 100 golds pour faire apparaitre un drone
 (l'objectif était de faire donner des golds pour des drones tués)
 
-  - On a retiré les tourelles par soucis de lisibilité
+  - On a retiré les tourelles par souci de lisibilité
 
 ### Scripts C#
 
