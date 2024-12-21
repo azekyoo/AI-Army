@@ -39,7 +39,7 @@ Nous voulions un combat vraiment épique digne d'un film d'action. L'idée d'une
 - Gameplay: 
   - Création de **2 équipes supplémentaires** pour un combat encore plus **épique**
   - Nouvelle classe : **Drone sniper** (unique aux violets) tirant à longue distance, avec un tir unique plus puissant
-  - Gestion de gold mannuel qui  permet d'appeler des **renforts** qui apparaissent au château de l'équipe, 100 golds pour faire apparaitre un drone
+  - Gestion de gold manuelle qui  permet d'appeler des **renforts** qui apparaissent au château de l'équipe, 100 golds pour faire apparaitre un drone
 (l'objectif était de faire donner des golds pour des drones tués)
 
   - On a retiré les tourelles par soucis de lisibilité
